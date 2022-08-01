@@ -1,0 +1,32 @@
+siguiendo el tutorial de Miudev: https://youtu.be/ZpY5KdGQvwI
+
+npm init -y
+
+npm install typescript -D
+
+añadimos en package.json en "scripts" la linea:
+  "tsc": "tsc",
+
+inicializaos nuestro proyecto de typescript
+  npm run tsc -- --init
+
+tsconfig.json
+    hacemos que los ficheros se transpilen en la carpeta build
+      "outDir": "./build", 
+    descomentamos:
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+
+instalamos express
+  npm install express -E
+
+para que express no de problemas en typescript debemos instalar:
+  npm install @types/express -D
+
+para que transpile y haga el build y todo instalamos
+  npm install ts-node-dev -D
+  añadimos en scripts de package.json
+    "dev": "ts-node-dev src/index.ts",
+  y ya podemos hacer el comando "npm run dev" y lo hace todo
