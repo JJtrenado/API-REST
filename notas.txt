@@ -30,3 +30,19 @@ para que transpile y haga el build y todo instalamos
   añadimos en scripts de package.json
     "dev": "ts-node-dev src/index.ts",
   y ya podemos hacer el comando "npm run dev" y lo hace todo
+
+para que podamos hacer "import diaryData from './diaries.json'" 
+tenemos que añadir en tsconfig.json: "resolveJsonModule": true,
+
+tambien vamos a intalar un linter para revisar errores:
+  npm install ts-standard -D
+  en el package.json
+    añadimos en scripts:
+      "lint": "ts-standard",  
+    añadimos una seccion nueva:
+      "eslintConfig": {
+        "parserOptions":{
+          "project": "./tsconfig.json"
+        },
+        "extends": ["./node_modules/ts-standard/eslintrc.json"]
+      }
