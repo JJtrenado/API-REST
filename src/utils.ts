@@ -32,7 +32,7 @@ const isWeather = (param: any): boolean => {
 }
 
 const parseVisibility = (VisibilityFromRequest: any): Visibility => {
-  if (!isString('VisibilityFromRequest') || !isVisibility('VisibilityFromRequest')) {
+  if (!isString('VisibilityFromRequest') || !isVisibility(VisibilityFromRequest)) {
     throw new Error('Incorrect or missing visibility')
   }
   return VisibilityFromRequest

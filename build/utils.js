@@ -27,7 +27,7 @@ const isWeather = (param) => {
     return Object.values(types_1.Weather).includes(param);
 };
 const parseVisibility = (VisibilityFromRequest) => {
-    if (!isString('VisibilityFromRequest') || !isVisibility('VisibilityFromRequest')) {
+    if (!isString('VisibilityFromRequest') || !isVisibility(VisibilityFromRequest)) {
         throw new Error('Incorrect or missing visibility');
     }
     return VisibilityFromRequest;
